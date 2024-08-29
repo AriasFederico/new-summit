@@ -1,0 +1,12 @@
+@import '../../../sass/_mixins';
+@import '../../../sass/_variables';
+
+.Header {
+  background-image: map-get($colors, 'gradient' );
+  padding: 1rem;
+  position: relative;
+
+  @include respond-to('medium') {
+    padding: 1.5rem 0;
+  }
+}

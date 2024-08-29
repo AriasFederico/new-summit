@@ -1,0 +1,42 @@
+$breakpoint-medium: 780px;
+$breakpoint-large: 1280px;
+$breakpoint-heigth-mobile: 400px;
+$breakpoint-limit:1280px;
+
+
+@mixin respond-to($breakpoint) {
+ @if $breakpoint == 'medium' {
+    @media 
+    (width >= $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoint == 'large' {
+    @media 
+    (width >= $breakpoint-large) {
+      @content;
+    }
+  }
+  @else if $breakpoint == 'limit' {
+    @media
+    (width > $breakpoint-large) {
+      @content;
+    }
+  }
+};
+
+@mixin respond-height($breakpoint) {
+  @if($breakpoint == 'mobile') {
+    @media 
+    (height <= $breakpoint-heigth-mobile) {
+      @content;
+    }
+  }
+}
+
+@mixin logo-fx () {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: bold;
+  user-select: none;
+}
